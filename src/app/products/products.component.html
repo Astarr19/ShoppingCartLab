@@ -1,0 +1,42 @@
+<h1 id="title">Shopping Cart</h1>
+<button id="toggle-btn" (click)="toggleForm()">Add</button>
+<ul>
+    <li id="list labels">
+        <h1>ID Number</h1>
+        <h1>Product</h1>
+        <h1>Price</h1>
+        <h1>Quantity</h1>
+        <h1>Edit</h1>
+        <h1>Delete</h1>
+    </li>
+    <li class="items" *ngFor="let item of products; index as i">
+        <h1 class="item-child">{{item.id}}</h1>
+        <h1 class="item-child">{{item.product}}</h1>
+        <h2 class="item-child">{{item.price}}</h2>
+        <p class="item-child">{{item.quantity}}</p>
+        <button (click)="toggleEdit([i])">Edit</button>
+        <button (click)="delete([i])">Delete</button>
+    </li>
+</ul>
+
+<form id="item-form" #f="ngForm" (ngSubmit)="addItem(f)" *ngIf="newItemForm">
+    <h1>New Item</h1>
+    <label for="product">Product Name</label>
+    <input type="text" id="product" name="product" ngModel>
+    <label for="price">Price</label>
+    <input type="number" id="price" name="price" ngModel>
+    <label for="quantity">quantity</label>
+    <input type="number" id="quantity" name="quantity" ngModel>
+    <button type="submit">Add to List</button>
+</form>
+
+<form id="edit-form" #g="ngForm" (ngSubmit)="edit(g)" *ngIf="editItemForm">
+    <h1>Edit Item</h1>
+    <label for="product">Product Name</label>
+    <input type="text" id="product" name="productEdit" ngModel>
+    <label for="price">Price</label>
+    <input type="number" id="price" name="priceEdit" ngModel>
+    <label for="quantity">quantity</label>
+    <input type="number" id="quantity" name="quantityEdit" ngModel>
+    <button type="submit">Edit Item</button>
+</form>

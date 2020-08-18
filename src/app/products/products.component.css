@@ -1,0 +1,56 @@
+* {
+    font-family: monospace;
+    font-size: 20px;
+    margin: 5px;
+}
+
+button {
+    background-color: royalblue;
+    color: white;
+}
+
+ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid black;
+}
+
+li {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.item-child {
+    text-align: center;
+}
+
+#title {
+    text-align: center;
+    font-size: 3rem;
+}
+
+#item-form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    background-color: green;
+    border-radius: 20px;
+}
+
+#edit-form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    background-color: purple;
+    border-radius: 20px;
+}
+
+#toggle-btn {
+    width: 100%;
+}
